@@ -49,7 +49,7 @@ from e3nn_jax._src.rotation import (
     xyz_to_angles,
 )
 from e3nn_jax._src.su2 import su2_clebsch_gordan, su2_generators
-from e3nn_jax._src.so3 import clebsch_gordan, generators
+from e3nn_jax._src.so3 import clebsch_gordan, clebsch_gordan_basislib, generators
 from e3nn_jax._src.irreps import Irrep, MulIrrep, Irreps
 from e3nn_jax._src.irreps_array import IrrepsArray
 from e3nn_jax._src.basic import (

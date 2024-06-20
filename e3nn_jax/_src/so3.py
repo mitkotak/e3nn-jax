@@ -38,6 +38,19 @@ def clebsch_gordan(l1: int, l2: int, l3: int) -> np.ndarray:
     assert np.all(np.abs(np.imag(C)) < 1e-5)
     return np.real(C)
 
+def clebsch_gordan_basislib(l1: int, l2: int, l3: int) -> np.ndarray:
+    r"""Same as above but called from BasisLib (https://github.com/atomicarchitects/BasisLib.git).
+
+    Args:
+        l1 (int): the representation order of the first irrep
+        l2 (int): the representation order of the second irrep
+        l3 (int): the representation order of the third irrep
+
+    Returns:
+        np.ndarray: the Clebsch-Gordan coefficients
+    """
+    import BasisLib
+    return BasisLib.so3.clebsch_gordan_for_degrees(l1, l2, l3, cartesian_order=False) / np.sqrt(2*l3+1)
 
 def generators(l: int) -> np.ndarray:
     r"""The generators of the real irreducible representations of :math:`SO(3)`.
